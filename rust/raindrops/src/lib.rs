@@ -1,24 +1,19 @@
-use std::collections::HashMap;
-
 pub fn raindrops(n: u32) -> String {
-    let mut tunes = HashMap::new();
+    let factors = [3, 5, 7];
+    let tunes = ["Pling", "Plang", "Plong"];
     let mut melody = vec![];
 
-    tunes.insert(3, "Pling".to_string());
-    tunes.insert(5, "Plang".to_string());
-    tunes.insert(7, "Plong".to_string());
-    
-    for (num, sound) in &tunes {
+    for (i, num) in factors.iter().enumerate() {
         if n % num == 0 {
-            melody.push(sound.clone());
-        } else { 
+            melody.push(tunes[i]);
+        } else {
             continue;
         };
-    };
+    }
 
     if melody.is_empty() {
-        return n.to_string()
-    } else {return melody.join("")}
-
-    
+        n.to_string()
+    } else {
+        melody.join("")
+    }
 }

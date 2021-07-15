@@ -1,18 +1,12 @@
-# Hello World
+# Sum Of Multiples
 
-The classical introductory exercise. Just say "Hello, World!".
+Given a number, find the sum of all the unique multiples of particular numbers up to
+but not including that number.
 
-["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
-the traditional first program for beginning programming in a new language
-or environment.
+If we list all the natural numbers below 20 that are multiples of 3 or 5,
+we get 3, 5, 6, 9, 10, 12, 15, and 18.
 
-The objectives are simple:
-
-- Write a function that returns the string "Hello, World!".
-- Run the test suite and make sure that it succeeds.
-- Submit your solution and check it at the website.
-
-If everything goes well, you will be ready to fetch your first real exercise.
+The sum of these multiples is 78.
 
 ## Rust Installation
 
@@ -89,7 +83,7 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+A variation on Problem 1 at Project Euler [http://projecteuler.net/problem=1](http://projecteuler.net/problem=1)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

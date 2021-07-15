@@ -1,18 +1,25 @@
-# Hello World
+# Clock
 
-The classical introductory exercise. Just say "Hello, World!".
+Implement a clock that handles times without dates.
 
-["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
-the traditional first program for beginning programming in a new language
-or environment.
+You should be able to add and subtract minutes to it.
 
-The objectives are simple:
+Two clocks that represent the same time should be equal to each other.
 
-- Write a function that returns the string "Hello, World!".
-- Run the test suite and make sure that it succeeds.
-- Submit your solution and check it at the website.
+## Rust Traits for `.to_string()`
 
-If everything goes well, you will be ready to fetch your first real exercise.
+Did you implement `.to_string()` for the `Clock` struct?
+
+If so, try implementing the
+[Display trait](https://doc.rust-lang.org/std/fmt/trait.Display.html) for `Clock` instead.
+
+Traits allow for a common way to implement functionality for various types.
+
+For additional learning, consider how you might implement `String::from` for the `Clock` type.
+You don't have to actually implement this—it's redundant with `Display`, which is generally the
+better choice when the destination type is `String`—but it's useful to have a few type-conversion
+traits in your toolkit.
+
 
 ## Rust Installation
 
@@ -89,7 +96,7 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+Pairing session with Erin Drummond [https://twitter.com/ebdrummond](https://twitter.com/ebdrummond)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
