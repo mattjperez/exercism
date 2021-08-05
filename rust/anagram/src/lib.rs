@@ -1,19 +1,23 @@
 use std::collections::HashSet;
 
+/// Returns sorted vec of chars
+fn sort_word(word: &str) -> Vec<char> {
+    let mut word = word.chars().collect::<Vec<_>>();
+    word.sort_unstable();
+    word
+}
+
 pub fn anagrams_for<'a>(word: &str, possible_anagrams: &[&'a str]) -> HashSet<&'a str> {
-    let mut anagrams = HashSet::new();
-    let word_lo = word.to_lowercase();
-    let mut word_chars = word_lo.chars().collect::<Vec<char>>();
-    word_chars.sort_unstable();
-    for possible_anagram in possible_anagrams {
-        let possible_anagram_lo = possible_anagram.to_lowercase();
-        if word_lo != possible_anagram_lo {
-            let mut possible_anagram_chars = possible_anagram_lo.chars().collect::<Vec<char>>();
-            possible_anagram_chars.sort_unstable();
-            if word_chars == possible_anagram_chars {
-                anagrams.insert(*possible_anagram);
-            }
-        }
-    }
-    anagrams
+    let lc_word = word.to_lowercase();
+
+    let sorted_lc_word = sort_word(&lc_word);
+
+    possible_anagrams
+        .iter()
+        .filter(|&a| {
+            let lc_anagram = a.to_lowercase();
+            lc_anagram != lc_word && sorted_lc_word == sort_word(&lc_anagram)
+        })
+        .map(|x| *x)
+        .collect()
 }
